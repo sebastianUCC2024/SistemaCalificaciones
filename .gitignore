@@ -1,0 +1,52 @@
+# ==============================
+# PYTHON
+# ==============================
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.sqlite3
+
+# ==============================
+# DJANGO
+# ==============================
+db.sqlite3
+*.log
+local_settings.py
+
+# Archivos de migraciones (opcional para evitar conflictos en grupo)
+**/migrations/*
+!**/migrations/__init__.py
+
+# ==============================
+# ENTORNO VIRTUAL
+# ==============================
+env/
+venv/
+ENV/
+.venv/
+
+# ==============================
+# VARIABLES DE ENTORNO
+# ==============================
+.env
+
+# ==============================
+# ARCHIVOS DE IDE
+# ==============================
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# ==============================
+# STATIC Y MEDIA (opcional)
+# ==============================
+staticfiles/
+media/
+
+# ==============================
+# SISTEMA OPERATIVO
+# ==============================
+.DS_Store
+Thumbs.db
