@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Eliminar Calificación</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f6f9;
+            padding: 30px;
+        }
+
+        .container {
+            max-width: 550px;
+            margin: auto;
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+        }
+
+        h1 {
+            color: #dc2626;
+        }
+
+        p {
+            font-size: 17px;
+            color: #374151;
+        }
+
+        .actions {
+            margin-top: 25px;
+        }
+
+        button {
+            background: #dc2626;
+            color: white;
+            border: none;
+            padding: 12px 18px;
+            border-radius: 8px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #b91c1c;
+        }
+
+        .cancelar {
+            display: inline-block;
+            background: #6b7280;
+            color: white;
+            padding: 12px 18px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-left: 10px;
+        }
+
+        .cancelar:hover {
+            background: #4b5563;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Eliminar Calificación</h1>
+
+    <p>
+        ¿Estás seguro de eliminar la calificación de
+        <strong>{{ calificacion.nombre_estudiante }}</strong>
+        en la asignatura
+        <strong>{{ calificacion.asignatura }}</strong>?
+    </p>
+
+    <form method="POST">
+        {% csrf_token %}
+        <div class="actions">
+            <button type="submit">Sí, eliminar</button>
+            <a class="cancelar" href="{% url 'listar_calificaciones' %}">Cancelar</a>
+        </div>
+    </form>
+</div>
+
+</body>
+</html>
