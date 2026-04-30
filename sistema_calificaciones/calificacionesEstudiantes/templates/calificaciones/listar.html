@@ -1,0 +1,26 @@
+<h1>Calificaciones</h1>
+
+<a href="{% url 'crear_calificacion' %}">Crear</a>
+
+<table border="1">
+    <tr>
+        <th>Nombre</th>
+        <th>Asignatura</th>
+        <th>Promedio</th>
+        <th>Acciones</th>
+    </tr>
+
+    {% for c in calificaciones %}
+    <tr>
+        <td>{{ c.nombre_estudiante }}</td>
+        <td>{{ c.asignatura }}</td>
+        <td>{{ c.promedio }}</td>
+        <td>
+            <a href="{% url 'editar_calificacion' c.id %}">Editar</a>
+            <a href="{% url 'eliminar_calificacion' c.id %}">Eliminar</a>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+
+<h2>Promedio general: {{ promedio_general }}</h2>
